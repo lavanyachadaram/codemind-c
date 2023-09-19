@@ -1,58 +1,52 @@
 #include<stdio.h>
-int pal(int n)
-{ 
-    int r,rv=0,t=n;
-    while(n!=0)
-    { 
-        r=n%10;
-        rv=rv*10+r;
-        n=n/10;
-        }
-        if(rv==t)
-        {
-            return 1; 
-            
-        }
-        else
-        { 
-            return 0;
-            }
-            }
-            int main()
-            {
-                int n,f,b;
-                scanf("%d",&n);
-                for(int i=n+1;;i++)
-                {
-                    if(pal(i))
-                    {
-                        f=i;
-                        break;
-                        } 
-                    
-                } 
-                for(int i=n-1;;i--)
-                { 
-                    if(pal(i))
-                    { 
-                        b=i;
-                        break;
-                        } 
-                    
-                } 
-                int d1=f-n;
-                int d2=n-b;
-                if(d1<d2)
-                {
-                    printf("%d",f);
-                    } 
-                    else if(d2<d1)
-                    {
-                        printf("%d",b);
-                        } 
-                        else
-                        { 
-                            printf("%d %d",b,f);
-                            }
-                
-            }
+int main()
+{
+    int n,left=0,right=0,temp,rev=0;
+scanf("%d",&n);
+for(int i=n+1;right==0;i++)
+{
+    temp=i;
+rev=0;
+while(temp)
+{
+    rev=rev*10+temp%10;
+    temp/=10;
+    }
+    if(rev==i)
+    {
+        right=i;
+                  break;
+                  }
+                  
+                      }
+                      for (int i=n-1;left==0;i--)
+                          {
+                              
+                                  temp=i;
+                                  
+                                          rev=0;
+                                               while (temp)
+                                                  {
+                                                      rev=rev*10+temp%10;
+                                                      temp/=10;   
+                                                      }
+                                                      if(rev==i)
+                                                      {
+                                                          left=i;
+                                                          break;
+                                                          }
+                          }
+                          if(right-n>n-left)
+                          {
+                              printf("%d",left);
+                          }
+                          else if(right-n<n-left)
+                          {
+                              printf("%d",right);
+                          }
+                          else{
+                              printf("%d %d",left,right);
+                          }
+
+                          }
+                          
