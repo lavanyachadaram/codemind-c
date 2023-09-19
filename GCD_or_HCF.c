@@ -1,16 +1,17 @@
 #include<stdio.h>
 int main()
-{ 
-    int n,m,i,gcd;
-    scanf("%d%d",&n,&m); 
-    for(i=1;i<=n&&i<=m;i++)
+{
+    int n,m,hcf,t;
+scanf("%d%d",&n,&m);
+while(n!=m)
+{
+    if(n>m)
     {
-        if(n%i==0&&m%i==0)
-        { 
-            gcd=i;
-            } 
-        
-    } 
-    printf("%d",gcd);
-    
+        n=n-m;
+    }
+    else{
+        m=m-n;
+    }
+}
+printf("%d",n);
 }
