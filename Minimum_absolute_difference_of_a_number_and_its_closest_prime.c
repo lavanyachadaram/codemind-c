@@ -1,48 +1,57 @@
 #include<stdio.h>
-void fun(int n)
-{
-    int left=0,right=0,fact=0; 
-    for(int i=n;left==0;i--)
-    {
-        fact=0;
-        for(int j=1;j<=i/2;j++)
-        {
-            if(i%j==0) 
-            fact++;
-            }
-            if(fact==1)
-            {
-                left=i;
-                break; 
-                
-            }
-            }
-            for(int i=n;right==0;i++)
-            {
-                fact=0;
-                for(int j=1;j<=n/2;j++)
-                {
-                    if(i%j==0)
-                    fact++;
-                    }
-                    if(fact==1)
-                    {
-                        right=i; 
-                        break;
-                        }
-                        }
-                        if(right-n>n-left || right-n==n-left)
-                        printf("%d",n-left);
-                        else 
-                        printf("%d",right-n);
-    
-}
+int prime(int);
 int main()
 {
-    int n;
-    scanf("%d",&n);
-    if(n==1 || n==2 || n==3 || n==5 || n==7 ) 
+    int n,i,a,b,d,d1;
+scanf("%d",&n);
+for(i=n-1;;i--)
+{
+    if(prime(i))
+{
+    a=i;
+d=n-a;
+break;
+}
+}
+for(i=n+1;i;i++)
+{
+    if(prime(i))
+{
+    b=i;
+d1=b-n;
+break;
+}
+}
+if(prime(n))
+{
     printf("0");
-    else fun(n);
+}
+else if(d>d1)
+{
+    printf("%d",d1);
+}else
+{
+    printf("%d",d);
+}
+{
+    
+    }
+    
+}
+int prime(int n)
+{
+    int f=0;
+for(int i=1;i<=n;i++)
+{
+    if(n%i==0)
+{
+    f++;
+}
+}if(f==2)
+{
+    return 1;
+}else{
+    return 0;
+}
     
 }
