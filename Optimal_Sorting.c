@@ -1,43 +1,42 @@
-#include<stdio.h>
-#include<limits.h>
-int main()
-{ 
-    int t,c=0; 
-    scanf("%d",&t);
-    while(t--) 
-    {
-        int n;
-        scanf("%d",&n);
-        int arr[n]; 
-        for(int i=0;i<n;i++) { 
-            scanf("%d",&arr[i]);
-            }
-            for(int k=1;k<n;k++) { 
-                if(arr[k-1]>arr[k])
-                {
-                    c++;
-                    }
-                    }
-                    if(c==0)
-                    {
-                        printf("%d",c); 
-                        
-                    } else 
-                    {
-                        int min=INT_MAX,max=INT_MIN;
-                        for(int l=0;l<n;l++)
-                        {
-                            if(min>arr[l]) 
-                            {
-                                min=arr[l];
-                                }
-                                if(max<arr[l])
-                                {
-                                    max=arr[l];
-                                    }
-                                    }
-                                    printf("%d
-",max-min);
-                                    }
-                                    }
-                                    }
+#include <stdio.h>
+int main ( )
+{
+    int t ;
+scanf ( "%d" , &t ) ;
+while ( t-- )
+{
+    int n ;
+scanf ( "%d" , &n ) ;
+int a [ 100 ] , t  , c = 0 , s ;
+for ( int i = 0 ; i < n ; i++ )
+{
+    scanf ( "%d" , &a [ i ] ) ;
+}
+for ( int i = 0 ; i < n ; i++ )
+{
+    for ( int j = i + 1 ; j < n ; j++ )
+{
+    if ( a [ i ] > a[ j ] ) 
+{
+    t = a [ i ] ;
+a [ i ] = a [ j ] ;
+a [ j ] = t ;
+c++ ;   
+}
+}
+}
+if ( c == 0 )
+{
+    printf ( "0
+" ) ;
+}
+else
+{
+    s = a [ n - 1 ] - a[ 0 ] ;
+printf ( "%d
+" , s ) ;
+}
+    
+}
+    
+}
